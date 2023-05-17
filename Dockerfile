@@ -1,8 +1,3 @@
-# Pull base image 
-From tomcat:8-jre8 
-
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY ./webapp.war /var/lib/jenkins/workspace/deploy/webapp/target
-
-
+FROM tomcat:8
+# Take the war and copy to webapps of tomcat
+COPY target/server.jar /usr/local/tomcat/webapps/
